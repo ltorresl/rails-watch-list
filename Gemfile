@@ -27,6 +27,9 @@ gem 'jbuilder', '~> 2.7'
 # autoprefixer gem to minimize code
 gem 'autoprefixer-rails', '10.2.5'
 
+# storing the key for the cloudinary api
+gem 'dotenv-rails'
+
 # font awesome for Sass
 gem 'font-awesome-sass', '~> 5.12.0'
 
