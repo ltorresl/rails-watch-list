@@ -1,2 +1,28 @@
-<h1>Bookmarks#new</h1>
-<p>Find me in app/views/bookmarks/new.html.erb</p>
+<div class="container">
+
+  <div class="card-category card-big card-category-big m-5 p-4">
+
+  <h1> Add movie to  <%= @list.name %> </h1>
+
+    <%= simple_form_for [@list, @bookmark] do |f| %>
+      <% if @bookmark.errors.any? %>
+        <div class="alert alert-danger">
+          <h5>You must correct these errors</h5>
+          <ul>
+            <% @bookmark.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <%= f.input :comment %>
+      <%= f.association :movie, collection: Movie.all - @list.movies %>
+      <%= f.submit class: 'btn btn-primary' %> or
+      <%= link_to 'Cancel', list_path(@list), class: 'btn btn-danger' %>
+    <% end %>
+
+  </div>
+
+</div>
+

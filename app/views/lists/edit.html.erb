@@ -1,5 +1,17 @@
-<h1>Edit your <%= @list.name %> list</h1>
 
-<%= render 'form', list: @list %>
 
-<%= link_to 'Back', lists_path %>
+<div class="container">
+
+  <div class="card-category card-big card-category-big m-5 p-4">
+
+    <h1>Edit your <%= @list.name %> list</h1>
+
+    <%= render 'form', list: @list %>
+
+    <%= link_to 'Back', lists_path %>
+
+  </div>
+
+</div>
+
+

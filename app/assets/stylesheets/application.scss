@@ -12,7 +12,10 @@
 @import "components/index";
 @import "pages/index";
 
-ul {
-  list-style: none;
+body {
+  margin: 0;
 }
 
+ul {
+  padding: 0;
+}

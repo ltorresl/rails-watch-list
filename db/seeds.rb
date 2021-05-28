@@ -1,15 +1,19 @@
-puts "Cleaning database first"
+puts "Deleting everything..."
+Bookmark.destroy_all
 Movie.destroy_all
 
-puts "Creating Movies..."
-10.times do
-  movie = Movie.new(
-    title: Faker::Movie.title,
-    overview: Faker::Movie.quote,
-    rating: Faker::Number.within(range: 0.0..10.0).round(1),
-    poster_url: "https://picsum.photos/seed/#{Faker::Movies::LordOfTheRings.character}/200/300"
+puts "Creating movies..."
+url = 'http://tmdb.lewagon.com/movie/top_rated'
+
+movies_json = JSON.parse(RestClient.get(url).body, symbolize_names: true)
+
+movies_json[:results].each do |movie_json|
+  Movie.create!(
+    title: movie_json[:title],
+    overview: movie_json[:overview],
+    poster_url: "https://image.tmdb.org/t/p/w500/#{movie_json[:poster_path]}",
+    rating: movie_json[:vote_average]
   )
-  movie.save!
 end
 
-puts "Movies created!"
+puts "Done 🎉"
