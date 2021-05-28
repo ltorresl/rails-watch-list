@@ -18,8 +18,8 @@
 
       <%= f.input :comment %>
       <%= f.association :movie, collection: Movie.all - @list.movies %>
-      <%= f.submit class: 'btn btn-primary' %> or
-      <%= link_to 'Cancel', list_path(@list), class: 'btn btn-danger' %>
+      <%= f.submit class: 'btn-medium' %> or
+      <%= link_to 'Cancel', list_path(@list), class: 'btn-medium-danger' %>
     <% end %>
 
   </div>

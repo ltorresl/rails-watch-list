@@ -30,6 +30,9 @@ gem 'autoprefixer-rails', '10.2.5'
 # storing the key for the cloudinary api
 gem 'dotenv-rails'
 
+# installing cloudinary
+gem 'cloudinary', '~> 1.16.0'
+
 # font awesome for Sass
 gem 'font-awesome-sass', '~> 5.12.0'
 
