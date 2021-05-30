@@ -3,11 +3,12 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <%= f.input :photo, as: :file %>
 
-  <div class="form-inputs m-4 p-3">
+  <div class="form-inputs">
     <%= f.input :name %>
   </div>
 
-  <div class="form-actions btn btn-primary m-4">
-    <%= f.button :submit %>
-  </div>
+    <%= f.button :submit, class: "form-actions btn btn-primary"%>
+    or
+    <%= link_to 'Cancel', lists_path, class: "btn btn-danger"%>
+
 <% end %>

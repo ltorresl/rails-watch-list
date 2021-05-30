@@ -13,6 +13,8 @@
   </p>
 <% end %>
 
+<h2 class="m-3"> <%= @lists.empty? ? "You haven't saved any lists yet..." : "Your Lists:" %> </h2>
+
   <ul>
   <% @lists.each do |list| %>
     <li>

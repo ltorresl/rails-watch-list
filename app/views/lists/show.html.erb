@@ -14,7 +14,7 @@
 
 
 
-<h2 class="m-3"> <%= @list.movies.empty? ? "You haven't saved any movies yet :(" : "Your Bookmarks:" %> </h2>
+<h2 class="m-3"> <%= @list.movies.empty? ? "You haven't saved any movies yet..." : "Your Bookmarks:" %> </h2>
 
 <ul>
   <% @list.bookmarks.each do |bookmark| %>
